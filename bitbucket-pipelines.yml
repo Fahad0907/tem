@@ -1,0 +1,9 @@
+image: python:3.6
+ 
+pipelines:
+  branches:          
+    development:
+      - step:
+          name: Dev server deploy
+          script:
+            - ssh mpower@123.200.18.24 "/home/mpower/ansible-virtualenv/bin/ansible-playbook  -i /home/mpower/cicd-csc-web/hosts  /home/mpower/cicd-csc-web/cicd-dev.yml"
